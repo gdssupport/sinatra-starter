@@ -1,0 +1,34 @@
+<div class='table-responsive'>
+<th><b>Customers - List:</b></th>
+<table class='table'>
+	<thead>
+		<tr>
+			<th> ID </th>
+			<th> First Name </th>
+			<th> Last Name </th>
+			<th> Tel </th>
+			<th> Email </th>
+      <th> Pax Leader </th>
+      <th> Add Contact </th>
+      <th> Contact Tel </th>
+      <th> Create Date </th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<% @customers.each do | customer | %>
+		<tr>
+			<td> <%= customer.id %> </td>
+			<td> <%= customer.first_name %> </td>
+			<td> <%= customer.last_name %> </td>
+			<td> <%= customer.tel %> </td>
+			<td> <%= customer.email %> </td>
+      <td> <%= customer.lead %> </td>
+      <td> <%= customer.add_contact %> </td>
+      <td> <%= customer.contact_tel %> </td>
+      <td> <%= customer.create_date %> </td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+</div>

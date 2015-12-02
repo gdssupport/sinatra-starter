@@ -1,0 +1,34 @@
+<div class='table-responsive'>
+<th><b>Transactions - List:</b></th>
+<table class='table'>
+	<thead>
+		<tr>
+			<th> ID </th>
+			<th> Customer Id </th>
+			<th> Concept Id </th>
+			<th> Pay Type </th>
+			<th> Amount </th>
+      <th> Approval Code </th>
+      <th> Trans Date </th>
+      <th> Agent Id </th>
+      <th> Notes </th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<% @transactions.each do | transaction | %>
+		<tr>
+			<td> <%= transaction.id %> </td>
+			<td> <%= transaction.cust_id %> </td>
+			<td> <%= transaction.concept_id %> </td>
+			<td> <%= transaction.pay_type %> </td>
+			<td> <%= transaction.amount %> </td>
+      <td> <%= transaction.approv_code %> </td>
+      <td> <%= transaction.trans_date %> </td>
+      <td> <%= transaction.agent_id %> </td>
+      <td> <%= transaction.trans_notes %> </td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+</div>

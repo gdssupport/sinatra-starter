@@ -1,0 +1,44 @@
+<h2>Travel Agents</h2>
+
+<div class='text-right'>
+	<a href='/agents/new' class='btn btn-primary'>
+		<i class='glyphicon glyphicon-plus'></i>
+		New
+	</a>
+</div>
+
+<div class='table-responsive'>
+<table class='table'>
+	<thead>
+		<tr>
+			<th> ID </th>
+			<th> First Name </th>
+			<th> Last Name </th>
+			<th> Tel </th>
+			<th> Email </th>
+			<th> Actions </th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @agents.each do | agent | %>
+		<tr>
+			<td> <%= agent.id %> </td>
+			<td> <%= agent.first_name %> </td>
+			<td> <%= agent.last_name %> </td>
+			<td> <%= agent.tel %> </td>
+			<td> <%= agent.email %> </td>
+			<td>
+				  <a href='/agents/<%= agent.id %>/edit'>
+						<i class='glyphicon glyphicon-edit' data-tooltip='Edit'></i>
+					</a>
+					<a href='/agents/<%= agent.id %>/delete'>
+						<i class='glyphicon glyphicon-trash' data-tooltip='Delete'></i>
+					</a>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+</div>
+
+<%= will_paginate @agents, renderer: BootstrapPagination::Sinatra %>
