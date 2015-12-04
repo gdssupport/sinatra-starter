@@ -4,7 +4,7 @@
 BOX                 = "monvillalon/sinatra"
 NETWORK_INTERFACE   = nil # Name of the network interface to bridge ex: "en0: Wi-Fi (AirPort)"
 MACHINE_MEMORY      = 512
-PRIVATE_IP          = "192.168.2.99"
+PRIVATE_IP          = "192.168.3.99"
 GUI                 = false
 PORT_WEBRICK        = 4567
 PORT_SHOTGUN        = 9393

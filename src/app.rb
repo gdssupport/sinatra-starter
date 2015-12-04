@@ -22,14 +22,17 @@ Dir[File.dirname(__FILE__) + '/routes/*.rb'].each {|file| require file }
 
 class MyApplication < Sinatra::Base
 
+  #Register Extensions
+  register Sinatra::Flash
+  register WillPaginate::Sinatra
+  register Sinatra::Auth
+
   #Configure Sinatra
   set :root,      File.dirname(__FILE__)
   set :sessions,  true
   set :session_secret, '47fcef80c1d038d1e279c0eb3b684932'
 
-  #Register Extensions
-  register Sinatra::Flash
-  register WillPaginate::Sinatra
+
 
   #Configure Development
   configure :development do
