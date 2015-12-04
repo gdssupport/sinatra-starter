@@ -11,6 +11,10 @@ class MyApplication < Sinatra::Base
     erb :user_new
   end
 
+  get "/login" do
+    erb :user_login
+  end
+
   # users========== > login Get
   # post "/users/login" do
     # @user = authenticate( params["username"], params["password"] )
