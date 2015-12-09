@@ -1,0 +1,11 @@
+.header-column h3,.header-column > div{
+  display: inline;
+ }
+ .header-column > div {
+   float: right;
+ }
+ .header-column > div span {
+   font-weight: 100;
+   padding: 0 2px;
+   font-size: 15px;
+ }

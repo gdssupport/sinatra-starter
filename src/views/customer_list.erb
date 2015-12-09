@@ -1,34 +1,81 @@
-<div class='table-responsive'>
-<th><b>Customers - List:</b></th>
-<table class='table'>
-	<thead>
-		<tr>
-			<th> ID </th>
-			<th> First Name </th>
-			<th> Last Name </th>
-			<th> Tel </th>
-			<th> Email </th>
-      <th> Pax Leader </th>
-      <th> Add Contact </th>
-      <th> Contact Tel </th>
-      <th> Create Date </th>
+<div class='panel'>
+	<div class='panel-body'>
 
-		</tr>
-	</thead>
-	<tbody>
-		<% @customers.each do | customer | %>
-		<tr>
-			<td> <%= customer.id %> </td>
-			<td> <%= customer.first_name %> </td>
-			<td> <%= customer.last_name %> </td>
-			<td> <%= customer.tel %> </td>
-			<td> <%= customer.email %> </td>
-      <td> <%= customer.lead %> </td>
-      <td> <%= customer.add_contact %> </td>
-      <td> <%= customer.contact_tel %> </td>
-      <td> <%= customer.create_date %> </td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
+		<div class='table-responsive'>
+			<!--SEARCH CUSTOMER-->
+			<!--FIRST NAME-->
+			<form method='GET'>
+			<div class="form-group">
+				<label  for="first_name">First Name</label>
+				<input id="first_name" name="first_name" type="text" placeholder="First Name" class="form-control" value='<%= params[:first_name ] %>' >
+			</div>
+				<!-- <span class="help-block">First Name</span> -->
+
+			<!-- LAST NAME-->
+			<div class="form-group">
+				<label for="last_name">Last Name</label>
+				<input id="last_name" name="last_name" type="text" placeholder="Last Name" class="form-control" value='<%= params[:last_name ] %>' >
+				<!-- <span class="help-block">Last Name</span> -->
+			</div>
+
+			<!------------>
+
+			<div class='text-right'>
+				<button type='submit' class='btn btn-primary'>
+					<i class='glyphicon glyphicon-search'></i>
+					Search
+				</a>
+			</div>
+
+			<table class='table'>
+				<thead>
+					<tr>
+						<th> ID </th>
+						<th> Name </th>
+						<th> Last Name </th>
+						<th> Tel </th>
+						<th> Email </th>
+			      <th> Pax Leader </th>
+			      <th> Add Contact </th>
+			      <th> Contact Tel </th>
+			      <th> Create Date </th>
+						<th> Edit </th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<% @customers.each do | customer | %>
+					<tr>
+						<td> <%= customer.id %> </td>
+						<td> <%= customer.first_name %> </td>
+						<td> <%= customer.last_name %> </td>
+						<td> <%= customer.tel %> </td>
+						<td> <%= customer.email %> </td>
+			      <td> <%= customer.lead %> </td>
+			      <td> <%= customer.add_contact %> </td>
+			      <td> <%= customer.contact_tel %> </td>
+			      <td> <%= customer.created_at %> </td>
+
+						<td>
+								&nbsp;&nbsp;
+							<a href='/customers/<%= customer.id %>'>
+								<i class='glyphicon glyphicon-edit' data-tooltip='Edit'></i>
+							</a>
+						</td>
+
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+
+			<div class='text-right'>
+				<a href='/customers/new' class='btn btn-primary'>
+					<i class='glyphicon glyphicon-plus'></i>
+					New
+				</a>
+			</div>
+
+		</div>
+		<%= will_paginate @customers, renderer: BootstrapPagination::Sinatra %>
+	</div>
 </div>

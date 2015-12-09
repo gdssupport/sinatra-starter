@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+  <div class="panel-heading header-column" >
+
+    <h3 class="panel-title">
+        <i class='fa fa-usd'></i>
+        Sales
+    </h3>
+      <div>
+          <span> Total Sale: <%= format_money @concept.total_cost %> </span>
+          <span> Paid: <%= format_money @total_cost %> </span>
+          <span> Balance Due: <%= format_money @concept.total_cost - @total_cost %> </span>
+      </div>
+  </div>
+  <div class="panel-body">
+    <!--SEARCH CUSTOMER-->
+    <!--FIRST NAME-->
+    <form method='GET'>
+    <div class="form-group">
+      <label  for="first_name">First Name</label>
+      <input id="first_name" name="first_name" type="text" placeholder="First Name" class="form-control" value='<%= params[:first_name ] %> >
+    </div>
+      <!-- <span class="help-block">First Name</span> -->
+
+    <!-- LAST NAME-->
+    <div class="form-group">
+      <label for="last_name">Last Name</label>
+      <input id="last_name" name="last_name" type="text" placeholder="Last Name" class="form-control">
+      <!-- <span class="help-block">Last Name</span> -->
+    </div>
+
+    <!------------>

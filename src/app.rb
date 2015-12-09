@@ -26,6 +26,7 @@ class MyApplication < Sinatra::Base
   register Sinatra::Flash
   register WillPaginate::Sinatra
   register Sinatra::Auth
+  helpers  Sinatra::Formatting::Helpers
 
   #Configure Sinatra
   set :root,      File.dirname(__FILE__)

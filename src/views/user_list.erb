@@ -1,4 +1,7 @@
-<h2>Users List</h2>
+<div class='panel'>
+	<div class='panel-body'>
+
+<th>Users List</th>
 
 <div class='text-right'>
 	<a href='/users/new' class='btn btn-primary'>
@@ -12,11 +15,12 @@
 	<thead>
 		<tr>
 			<th> ID </th>
-			<th> First Name </th>
+			<th> Name </th>
 			<th> Last Name </th>
 			<th> Tel </th>
-			<th> Username </th>
-			<th> Actions </th>
+			<th> Email </th>
+			<th> User name </th>
+			<th> Edit/Del </th>
 		</tr>
 	</thead>
 	<tbody>
@@ -26,11 +30,14 @@
 			<td> <%= user.first_name %> </td>
 			<td> <%= user.last_name %> </td>
 			<td> <%= user.tel %> </td>
-			<td> <%= user.user_name %> </td>
+			<td> <%= user.email %> </td>
+			<td> <%= user.username %> </td>
 			<td>
+				  &nbsp;
 				  <a href='/users/<%= user.id %>/edit'>
 						<i class='glyphicon glyphicon-edit' data-tooltip='Edit'></i>
 					</a>
+					&nbsp;&nbsp;
 					<a href='/users/<%= user.id %>/delete'>
 						<i class='glyphicon glyphicon-trash' data-tooltip='Delete'></i>
 					</a>
@@ -42,3 +49,5 @@
 </div>
 
 <%= will_paginate @users, renderer: BootstrapPagination::Sinatra %>
+
+</div></div>

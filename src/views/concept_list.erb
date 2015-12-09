@@ -1,5 +1,14 @@
+<div class='panel'>
+	<div class='panel-body'>
+<th>Sale concepts list</th>
+<div class='text-right'>
+	<a href='/concepts/new' class='btn btn-primary'>
+		<i class='glyphicon glyphicon-plus'></i>
+		New
+	</a>
+</div>
 <div class='table-responsive'>
-<th><b>Sale Concepts - List:</b></th>
+
 <table class='table'>
 	<thead>
 		<tr>
@@ -8,16 +17,14 @@
 			<th> Dest </th>
 			<th> Type </th>
 			<th> Type Desc </th>
-      <th> Rec Loc </th>
       <th> Depart </th>
       <th> Arrival </th>
       <th> Total Cost </th>
       <th> Due Date </th>
-      <th> Cust Id </th>
-      <th> Agent Id </th>
-      <th> Notes </th>
+			<th> Edit </th>
     </tr>
 	</thead>
+
 	<tbody>
 		<% @concepts.each do | concept | %>
 		<tr>
@@ -26,17 +33,25 @@
 			<td> <%= concept.destination %> </td>
 			<td> <%= concept.trans_type %> </td>
 			<td> <%= concept.type_desc %> </td>
-      <td> <%= concept.rec_loc %> </td>
       <td> <%= concept.depart %> </td>
       <td> <%= concept.arrival %> </td>
       <td> <%= concept.total_cost %> </td>
       <td> <%= concept.due_date %> </td>
-      <td> <%= concept.cust_id %> </td>
-      <td> <%= concept.agent_id %> </td>
-      <td> <%= concept.notes %> </td>
-
+			<td>
+					&nbsp;
+				  <a href='/concepts/<%= concept.id %>/edit'>
+						<i class='glyphicon glyphicon-edit' data-tooltip='Edit'></i>
+					</a>
+					<!-- &nbsp;&nbsp;
+					<a href='/concepts/<%= concept.id %>/delete'>
+						<i class='glyphicon glyphicon-trash' data-tooltip='Delete'></i>
+					</a> -->
+			</td>
 		</tr>
 		<% end %>
 	</tbody>
 </table>
+</div>
+<%= will_paginate @concepts, renderer: BootstrapPagination::Sinatra %>
+</div>
 </div>

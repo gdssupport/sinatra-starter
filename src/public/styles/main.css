@@ -283,7 +283,7 @@ hr {
   border: 0 !important;
   border-radius: 0;
   background: #3C3C3C;
-  
+
 }
 #topbar .navbar-top-links li {
   display: inline-block;
@@ -558,7 +558,7 @@ hr {
   font-size: 25px;
   font-weight: 300;
   display: inline-block;
-  
+
 }
 .page-title-breadcrumb .page-header .page-subtitle {
   font-size: 14px;
@@ -824,7 +824,7 @@ hr {
    background: #3C3C3C; /* Old browsers */
      outline: none;
       color:#d9d9d9;
-    
+
 }
 
 .navbar-static-side ul li.active a {
@@ -1076,7 +1076,7 @@ background: #303030; /* Old browsers */
   height: 50px;
     background: #303030; /* Old browsers */
       outline: none;
-      
+
 }
 .left-side-collapsed .navbar-static-side ul#side-menu li ul.nav-second-level {
   display: none;
@@ -4509,7 +4509,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary {
   color: #ffffff;
   border: 1px solid #1f68b1;
-  
+
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -7014,3 +7014,8 @@ ul.chats li.out .message {
   border-radius: 0px !important;
   border: 1px solid #e5e5e5;
 }
+
+------------------------------------------------------------
+.header-column h3,.header-column > div{
+  display: inline;
+ }

@@ -1,59 +1,58 @@
-<form method='POST'>
-<th><center><b>Transaction - Create:</b></center></th>
-    <!-- CUSTOMER ID-->
+<div class='panel'>
+	<div class='panel-body'>
+
+<form method='POST' action="">
+	<center><b>Transaction - Create:</b></center>
+
+		<!-- CUSTOMER ID-->
     <div class="form-group">
-      <label  for="cust_id">Customer Id</label>
-      <input id="cust_id" name="cust_id" type="text" placeholder="Customer Id" class="form-control" required="">
-      <span class="help-block">Customer Id</span>
+      <label  for="cust_id">Customer</label>
+			<div class='form-static'>
+				<strong><%= @customer.first_name %></strong>
+			</div>
     </div>
 
     <!-- SALE CONCEPT ID-->
-    <div class="form-group">
-      <label for="concept_id">Concept Id</label>
-      <input id="concept_id" name="concept_id" type="text" placeholder="Concept Id" class="form-control" required="">
-      <span class="help-block">Concept Id</span>
-    </div>
+	<div class="form-group">
+		<label  for="cust_id">Concept</label>
+		<div class='form-static'>
+			<strong><%= @concept.type_desc %></strong>
+		</div>
+	</div>
 
     <!-- PAY TYPE-->
     <div class="form-group">
       <label for="pay_type">Pay Type</label>
-      <input id="pay_type" name="pay_type" type="text" placeholder="Pay Type" class="form-control" required="">
-      <span class="help-block">Pay Type</span>
+      <input id="pay_type" name="pay_type" type="text" placeholder="Cash/Credit/Check" class="form-control" required="" value='<%= @transaction.pay_type %>'>
+      <!-- <span class="help-block">Pay Type</span> -->
     </div>
 
     <!-- PAYMENT AMOUNT-->
     <div class="form-group">
       <label for="amount">Payment Amount</label>
       <input id="amount" name="amount" type="text" placeholder="Payment Amount" class="form-control" required="">
-      <span class="help-block">Payment Amount</span>
+      <!-- <span class="help-block">Payment Amount</span> -->
     </div>
 
     <!-- APPROVAL CODE-->
     <div class="form-group">
       <label for="approv_code">Approval Code</label>
       <input id="approv_code" name="approv_code" type="text" placeholder="Approval Code" class="form-control" required="">
-      <span class="help-block">Approval Code</span>
+      <!-- <span class="help-block">Approval Code</span> -->
     </div>
 
     <!-- TRANSACTION DATE-->
     <div class="form-group">
       <label for="trans_date">Trans Date</label>
-      <input id="trans_date" name="trans_date" type="text" placeholder="Trans Date" class="form-control" required="">
-      <span class="help-block">Trans Date</span>
-    </div>
-
-    <!-- AGENT ID-->
-    <div class="form-group">
-      <label for="agent_id">Agent Id</label>
-      <input id="agent_id" name="agent_id" type="text" placeholder="Agent Id" class="form-control" required="">
-      <span class="help-block">Agent Id</span>
+      <input id="trans_date" name="trans_date" type="date" placeholder="Trans Date" class="form-control" required="">
+      <!-- <span class="help-block">Trans Date</span> -->
     </div>
 
     <!-- TRANS NOTES-->
     <div class="form-group">
       <label for="trans_notes">Notes</label>
-      <input id="trans_notes" name="trans_notes" type="text" placeholder="Notes" class="form-control" required="">
-      <span class="help-block">Notes</span>
+      <textarea id="trans_notes" name="trans_notes" placeholder="Notes" class="form-control" ></textarea>
+      <!-- <span class="help-block">Notes</span> -->
     </div>
 
     <div class='text-right'>
@@ -68,3 +67,5 @@
     </div>
 
 </form>
+
+</div></div>

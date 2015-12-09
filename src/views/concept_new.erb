@@ -1,31 +1,106 @@
+<div class='panel'>
+	<div class='panel-body'>
+
 <form method='POST'>
-<th><center><b>Sales Concept - New :</b></center></th>
+<th><center>Create Sales concept </center></th>
+<div>
+	 <% if @concept.id == nil %> <!-- ONLY IF CUSTOMER HAS NO SALES CONCEPT -->
+	 	<div class="form-group">
+			<label  for="cust_id">Customer</label>
+			<div class='form-static'>
+				<strong><%= @customer.first_name %></strong> <!-- CUSTOMER FIRST NAME-->
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label  for="cust_id">Last Name</label>
+			<div class='form-static'>
+				<strong><%= @customer.last_name %></strong> <!-- CUSTOMER LAST NAME-->
+			</div>
+		</div>
+	<% end %>
+</div>
+		<!--- NEW SALES CONCEPT --->
     <!-- Origin Date-->
     <div class="form-group">
-      <label  for="origin_datefirst_name">First Name</label>
-      <input id="first_name" name="user[first_name]" type="text" placeholder="First Name" class="form-control" required="" value='<%= @agent.first_name %>'>
-      <span class="help-block">First Name</span>
+      <label  for="orig_date">Origin Date</label>
+      <input id="origin_date" name="user[orig_date]" type="date" placeholder="Origin Date" class="form-control" required="" value='<%= @concept.orig_date %>'>
+      <!-- <span class="help-block">Origin Date</span> -->
     </div>
 
-    <!-- LAST NAME-->
+    <!-- Destination-->
     <div class="form-group">
-      <label for="last_name">Last Name</label>
-      <input id="last_name" name="user[last_name]" type="text" placeholder="Last Name" class="form-control" required="">
-      <span class="help-block">Last Name</span>
+      <label for="destination">Destination</label>
+      <input id="destination" name="user[destination]" type="text" placeholder="Destination" class="form-control" required="" value='<%= @concept.destination %>'>
+      <!-- <span class="help-block">Last Name</span> -->
     </div>
 
-    <!-- TELEPHONE-->
+    <!-- Transaction Type-->
     <div class="form-group">
-      <label for="tel">Tel</label>
-      <input id="tel" name="user[tel]" type="text" placeholder="Tel" class="form-control" required="">
-      <span class="help-block">Tel</span>
+      <label for="trans_type">Trans Type</label>
+      <input id="transa_type" name="user[trans_type]" type="text" placeholder="Car/Hotel/Air" class="form-control" required="" value='<%= @concept.trans_type %>'>
+      <!-- <span class="help-block">Trans Type</span> -->
     </div>
 
-    <!-- EMAIL-->
+    <!-- Type Desc-->
     <div class="form-group">
-      <label for="email">Email</label>
-      <input id="Email" name="user[email]" type="text" placeholder="Email" class="form-control" required="">
-      <span class="help-block">Email</span>
+      <label for="type_desc">Type Description</label>
+      <input id="type_desc" name="user[type_desc]" type="text" placeholder="Type Description" class="form-control" required="" value='<%= @concept.type_desc %>'>
+      <!-- <span class="help-block">Type Description Type</span> -->
+    </div>
+    <!-- Rec Locator-->
+    <div class="form-group">
+      <label for="rec_loc">Record Locator</label>
+      <input id="rec_loc" name="user[rec_loc]" type="text" placeholder="Record Locator" class="form-control" required="" value='<%= @concept.rec_loc %>'>
+      <!-- <span class="help-block">Record Locator</span> -->
+    </div>
+    <!-- Departure Date-->
+    <div class="form-group">
+      <label for="depart">Departure Date</label>
+      <input id="depart" name="user[depart]" type="date" placeholder="Departure Date" class="form-control" required="" value='<%= @concept.depart %>'>
+      <!-- <span class="help-block">Departure Date</span> -->
+    </div>
+    <!-- Arrival Date-->
+    <div class="form-group">
+      <label for="arrival">Arrival Date</label>
+      <input id="arrival" name="user[arrival]" type="date" placeholder="Arrival Date" class="form-control" required="" value='<%= @concept.arrival %>'>
+      <!-- <span class="help-block">Arrival Date</span> -->
+    </div>
+    <!-- Total Cost-->
+    <div class="form-group">
+      <label for="total_cost">Total Cost</label>
+      <input id="total_cost" name="user[total_cost]" type="text" placeholder="Total Cost" class="form-control" required="" value='<%= @concept.total_cost %>'>
+      <!-- <span class="help-block">Total Cost</span> -->
+    </div>
+    <!-- Due Date-->
+    <div class="form-group">
+      <label for="due_date">Due Date</label>
+      <input id="due_date" name="user[due_date]" type="date" placeholder="Due Date" class="form-control" required="" value='<%= @concept.due_date %>'>
+      <!-- <span class="help-block">Due Date</span> -->
+    </div>
+    <!-- Customer Id-->
+    <div class="form-group">
+      <label for="cust_id">Cust Id</label>
+      <input id="cust_id" name="user[cust_id]" type="text" placeholder="Cust Id" class="form-control" required="" value='<%= @concept.cust_id %>'>
+      <!-- <span class="help-block">Cust Id</span> -->
+    </div>
+    <!-- Notes-->
+    <div class="form-group">
+      <label for="notes">Notes </label>
+      <input id="notes" name="user[notes]" type="text" placeholder="Notes " class="form-control" required="" value='<%= @concept.notes %>'>
+      <!-- <span class="help-block">Notes</span> -->
+    </div>
+    <!-- Create at Date-->
+    <!-- <div class="form-group">
+      <label for="create_at">Create Date</label>
+      <input id="create_at" name="user[create_at]" type="text" placeholder="Create Date" class="form-control" required="">
+      <span class="help-block">Create Date</span>
+    </div> -->
+    <!-- Agent Id-->
+    <div class="form-group">
+      <label for="user_id">User Id</label>
+      <input id="user_id" name="user[user_id]" type="text" placeholder="User Id" class="form-control" required="" value='<%= @concept.user_id %>'>
+      <!-- <span class="help-block">Agent Id</span> -->
     </div>
 
     <div class='text-right'>
@@ -33,7 +108,7 @@
             <i class='glyphicon glyphicon-save'></i>
             Save
         </button>
-        <a href='/agents' class='btn btn-danger'>
+        <a href='/concepts' class='btn btn-danger'>
             <i class='glyphicon glyphicon-close'></i>
             Cancel
         </a>

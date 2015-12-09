@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Receipt System ver 1.0</title>
+    <title>Receipts System ver 1.0</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +24,8 @@
     <link type="text/css" rel="stylesheet" href="/styles/zabuto_calendar.min.css">
     <link type="text/css" rel="stylesheet" href="/styles/pace.css">
     <link type="text/css" rel="stylesheet" href="/styles/jquery.news-ticker.css">
+
+    <link type="text/css" rel="stylesheet" href="/styles/styles.css">
 </head>
 
 <body>
@@ -44,17 +46,17 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">
-                       <img src='/images/SharonTours.png' style='height:40px' />
+                      <th><b>Universal Travel Corp.</b></th>
+                       <!-- <img src='/images/15.jpg' style='height:40px' /> -->
                     </a>
                 </div>
                 <div class="topbar-main">
                   <a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
                     <ul class="nav navbar navbar-top-links navbar-right mbn">
-
                         <% if authenticated? %>
                         <li class="dropdown topbar-user">
                             <a data-hover="dropdown" href="#" class="dropdown-toggle">
-                                <span class="hidden-xs"><%= authenticated_user.username %></span>&nbsp;
+                                <span class="hidden-xs">User:&nbsp;&nbsp;<%= authenticated_user.username %></span>&nbsp;
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-user pull-right">
@@ -79,7 +81,7 @@
 
                         <div class="clearfix"></div>
                         <li>
-                          <a href="dashboard.html">
+                          <a href="/dashboard">
                             <i class="fa fa-tachometer fa-fw">
                               <div class="icon-bg bg-orange"></div>
                             </i>
@@ -88,22 +90,77 @@
                         </li>
 
                         <li>
-                          <a href="dashboard.html">
+                          <a href="/customers">
+                            <i class="fa fa-user fa-fw">
+                              <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Customers</span>
+                          </a>
+                        </li>
+
+                        <!-- <li>
+                          <a href="/customers/new">
                             <i class="fa fa-usd fa-fw">
                               <div class="icon-bg bg-orange"></div>
                             </i>
-                            <span class="menu-title">Concepts</span>
+                            <span class="menu-title">Create Customers</span>
+                          </a>
+                        </li> -->
+
+
+                        <!-- <li>
+                          <a href="/users/new">
+                            <i class="fa fa-usd fa-fw">
+                              <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Create Users</span>
+                          </a>
+                        </li> -->
+
+                        <li>
+                          <a href="/concepts">
+                            <i class="fa fa-usd fa-fw">
+                              <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Sales Concepts</span>
+                          </a>
+                        </li>
+                        <!-- <li>
+                          <a href="/concepts/new">
+                            <i class="fa fa-usd fa-fw">
+                              <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Create Sales Concepts</span>
+                          </a>
+                        </li> -->
+
+                        <li>
+                          <a href="/transactions">
+                            <i class="fa fa-usd fa-fw">
+                              <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Transactions</span>
                           </a>
                         </li>
 
                         <li>
-                          <a href="dashboard.html">
+                          <a href="/users">
                             <i class="fa fa-user fa-fw">
                               <div class="icon-bg bg-orange"></div>
                             </i>
-                            <span class="menu-title">Agents</span>
+                            <span class="menu-title">Users</span>
                           </a>
                         </li>
+
+                        <!-- <li>
+                          <a href="/transactions/new">
+                            <i class="fa fa-usd fa-fw">
+                              <div class="icon-bg bg-orange"></div>
+                            </i>
+                            <span class="menu-title">Create Transactions</span>
+                          </a>
+                        </li> -->
+
 
                     </ul>
                 </div>
@@ -115,12 +172,18 @@
                 <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
                     <div class="page-header pull-left">
                         <div class="page-title">
-                            Receipt System ver 1.0
+                            Receipts System ver 1.0
                         </div>
                     </div>
                     <div class="clearfix">
                     </div>
                 </div>
+                <script type="text/javascript">
+                document.write ('<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="date-time">', new Date().toLocaleString(), '<\/span>.<\/p>')
+                if (document.getElementById) onload = function () {
+                   setInterval ("document.getElementById ('date-time').firstChild.data = new Date().toLocaleString()", 50)
+                 }
+                </script>
                 <!--END TITLE & BREADCRUMB PAGE-->
                 <!--BEGIN CONTENT-->
                 <div class="page-content">
@@ -143,7 +206,7 @@
                 <!--BEGIN FOOTER-->
                 <div id="footer">
                     <div class="copyright">
-                        <a href="http://themifycloud.com">2014 © KAdmin Responsive Multi-Purpose Template</a>
+                        <a href="http://gdsupport.net">2015 © GDSupport.net Receipts System Ver 1.0</a>
                     </div>
                 </div>
                 <!--END FOOTER-->
