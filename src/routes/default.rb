@@ -1,8 +1,7 @@
 class MyApplication < Sinatra::Base
 
   get "/" do
-    @names = [ "Default" ]
-    erb :index
+    redirect "/login"
   end
 
   get "/reciepts/:id" do

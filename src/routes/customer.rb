@@ -1,5 +1,9 @@
 class MyApplication < Sinatra::Base
 
+  before "/customers*" do
+    protected!
+  end
+
     get "/customers" do
       @customers =  Customer.paginate( page: params["page"] , per_page: 7  )
 
@@ -50,5 +54,5 @@ class MyApplication < Sinatra::Base
       erb :customer_show
 
     end
-        
+
 end
