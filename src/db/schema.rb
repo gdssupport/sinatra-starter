@@ -38,18 +38,20 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "cust_id"
     t.text    "notes"
     t.date    "create_date"
-    t.integer "agent_id"
+    t.text    "user_id"
   end
 
   create_table "customers", force: :cascade do |t|
-    t.text "first_name"
-    t.text "last_name"
-    t.text "tel"
-    t.text "email"
-    t.text "lead"
-    t.text "add_contact"
-    t.text "contact_tel"
-    t.date "create_date"
+    t.text    "first_name"
+    t.text    "last_name"
+    t.text    "tel"
+    t.text    "email"
+    t.text    "lead"
+    t.text    "add_contact"
+    t.text    "contact_tel"
+    t.date    "created_at"
+    t.integer "current_bal"
+    t.date    "updated_at"
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -59,8 +61,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "amount"
     t.text    "approv_code"
     t.date    "trans_date"
-    t.integer "agent_id"
     t.text    "trans_notes"
+    t.text    "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,7 +71,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.text "tel"
     t.text "email"
     t.text "password"
-    t.text "user_name"
+    t.text "username"
   end
 
 end
