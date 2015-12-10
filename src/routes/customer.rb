@@ -1,8 +1,8 @@
 class MyApplication < Sinatra::Base
 
-  before "/customers*" do
-    protected!
-  end
+    before "/customers*" do
+      protected!
+    end
 
     get "/customers" do
       @customers =  Customer.paginate( page: params["page"] , per_page: 7  )
@@ -47,10 +47,9 @@ class MyApplication < Sinatra::Base
       else
         @transactions = Transaction.where(concept_id: @concept.id)
         @total_cost = @transactions.inject(0) do |result, trans|
-          result + trans.amount
+        result + trans.amount
         end
       end
-
       erb :customer_show
 
     end
